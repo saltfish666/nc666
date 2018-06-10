@@ -1,0 +1,18 @@
+{
+  "name": "nc666",
+  "bin": {
+    "nls": "./script/ls.js",
+    "necho": "./script/echo.js"
+  },
+  "version": "0.0.2",
+  "description": "use node rewrite shell commands",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saltfish666/nc666.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saltfish666/nc666/issues"
+  },
+  "author": "https://github.com/saltfish666",
+  "license": "MIT"
+}
