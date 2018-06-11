@@ -52,6 +52,19 @@ p_readdir(recentDir).then(files=>{
     throw err
 })
 */
+async function logFileName(filePath,fileName){
+    let stat;
+    try{
+        stat = await p_stat(path.join(filePath,fileName))
+    }catch(err){
+        throw err
+    }
+    if (stat.isDirectory()) {
+        console.log(chalk.blue(fileName))
+    }else{
+        console.log(fileName)
+    }
+}
 
 async function ls(){
     let files;
@@ -62,14 +75,7 @@ async function ls(){
     }
 
     files.forEach((fileName)=>{
-        fs.stat(path.join(recentDir,fileName),(err,stat)=>{
-            if(err) throw err
-            if (stat.isDirectory()) {
-                console.log(chalk.blue(fileName))
-            }else{
-                console.log(fileName)
-            }
-        })
+        logFileName(recentDir,fileName)
     })
 }
 ls()
