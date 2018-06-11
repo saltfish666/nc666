@@ -10,7 +10,8 @@ const p_stat = promisify(fs.stat)
 
 let recentDir = process.env.PWD
 
-/*fs.readdir(recentDir,(err,files)=>{
+/*
+fs.readdir(recentDir,(err,files)=>{
     if(err){
       console.log(err)
     }
@@ -31,6 +32,7 @@ let recentDir = process.env.PWD
 })
 */
 
+/*
 p_readdir(recentDir).then(files=>{
 
     files.forEach((fileName)=>{
@@ -49,3 +51,41 @@ p_readdir(recentDir).then(files=>{
 }).catch(err=>{
     throw err
 })
+*/
+
+async function ls(){
+    let files;
+    try{
+        files = await p_readdir(recentDir)
+    }catch(err){
+        throw err
+    }
+
+    files.forEach((fileName)=>{
+        fs.stat(path.join(recentDir,fileName),(err,stat)=>{
+            if(err) throw err
+            if (stat.isDirectory()) {
+                console.log(chalk.blue(fileName))
+            }else{
+                console.log(fileName)
+            }
+        })
+    })
+}
+ls()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
