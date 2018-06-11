@@ -2,7 +2,9 @@
   "name": "nc666",
   "bin": {
     "nls": "./script/ls.js",
-    "necho": "./script/echo.js"
+    "necho": "./script/echo.js",
+    "ncat": "./script/cat.js",
+    "sf": "./script/sf.js"
   },
   "version": "0.0.2",
   "description": "use node rewrite shell commands",
@@ -14,5 +16,9 @@
     "url": "https://github.com/saltfish666/nc666/issues"
   },
   "author": "https://github.com/saltfish666",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "yargs": "^11.0.0"
+  }
 }
