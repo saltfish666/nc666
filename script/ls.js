@@ -4,13 +4,15 @@ const path = require('path')
 
 const chalk = require('chalk')
 
-fs.readdir(__dirname,(err,files)=>{
+let recentDir = process.env.PWD
+
+fs.readdir(recentDir,(err,files)=>{
     if(err){
       console.log(err)
     }
     
     files.forEach((fileName)=>{
-    	let stat = fs.lstatSync(path.join(__dirname,fileName))
+    	let stat = fs.lstatSync(path.join(recentDir,fileName))
     	if (stat.isDirectory()) {
     		console.log(chalk.blue(fileName))
     	}else{
