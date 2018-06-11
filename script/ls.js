@@ -10,13 +10,18 @@ fs.readdir(recentDir,(err,files)=>{
     if(err){
       console.log(err)
     }
-    
+
     files.forEach((fileName)=>{
-    	let stat = fs.lstatSync(path.join(recentDir,fileName))
-    	if (stat.isDirectory()) {
-    		console.log(chalk.blue(fileName))
-    	}else{
-    		console.log(fileName)
-    	}
+
+        fs.stat(path.join(recentDir,fileName),(err,stat)=>{
+
+            if(err) throw err
+
+            if (stat.isDirectory()) {
+                console.log(chalk.blue(fileName))
+            }else{
+                console.log(fileName)
+            }
+        })
     })
 })

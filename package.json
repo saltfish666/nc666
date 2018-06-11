@@ -6,7 +6,7 @@
     "ncat": "./script/cat.js",
     "sf": "./script/sf.js"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "use node rewrite shell commands",
   "repository": {
     "type": "git",
