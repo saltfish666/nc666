@@ -5,8 +5,8 @@
     "necho": "./script/echo.js",
     "ncat": "./script/cat.js",
     "sf": "./script/sf.js",
-    "ntouch":"./script/touch.js",
-    "nmkdir":"./script/mkdir.js"
+    "ntouch": "./script/touch.js",
+    "nmkdir": "./script/mkdir.js"
   },
   "version": "0.0.3",
   "description": "use node rewrite shell commands",
@@ -21,6 +21,8 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
+    "execa": "^0.10.0",
+    "shell-env": "^2.0.0",
     "yargs": "^11.0.0"
   }
 }
